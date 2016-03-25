@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+    <servlet>
+        <servlet-name>SearchEngine</servlet-name>
+        <servlet-class>SearchEngines</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchEngine</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+</web-app>

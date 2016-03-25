@@ -1,0 +1,23 @@
+<web-app>
+	<filter>
+			<filter-name>CheckFilter</filter-name>
+			<filter-class>eighth</filter-class>
+			<init-parm>
+				<parm-name>Parm1</parm-name>
+				<parm-value>Value1</parm-value>
+			</init-parm>
+	</filter>
+	<servlet>
+			<servlet-name>seventh</servlet-name>
+			<servlet-class>seventh</servlet-class>
+	</servlet>
+	<servlet-mapping>
+			<servlet-name>seventh</servlet-name>
+			<url-pattern>/servlet/AddServlet</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+			<filter-name>CheckFilter</filter-name>
+			<url-pattern>/servlet/AddServlet</url-pattern>
+			<dispatcher>Request</dispatcher>
+	</filter-mapping>
+</web-app>

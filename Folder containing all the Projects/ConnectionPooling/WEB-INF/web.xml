@@ -1,0 +1,13 @@
+<web-app>
+		<welcome-file-list>
+						<welcome-file>index.htm</welcome-file>
+		</welcome-file-list>
+		<servlet>
+						<servlet-name>conPool</servlet-name>
+						<servlet-class>ConnPoolServlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+						<servlet-name>conPool</servlet-name>
+						<url-pattern>/ConnPoolServlet</url-pattern>
+		</servlet-mapping>
+</web-app>

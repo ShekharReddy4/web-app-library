@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+<servlet>
+        <servlet-name>servlet2</servlet-name>
+        <jsp-file>edit.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet2</servlet-name>
+        <url-pattern>/security1</url-pattern>
+    </servlet-mapping>
+    <security-constraint>
+        <web-resource-collection>
+        <web-resource-name>Authentication1</web-resource-name>
+             <url-pattern>/security1</url-pattern>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+        <role-name> users</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+             <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+       <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login_fail.jsp</form-error-page>
+			 </form-login-config>
+			<realm-name>myrealm</realm-name>
+			</login-config>
+    <security-role>
+         <role-name>users</role-name>
+    </security-role>
+</web-app>

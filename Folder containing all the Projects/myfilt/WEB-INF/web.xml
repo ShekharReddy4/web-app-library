@@ -1,0 +1,26 @@
+<web-app>
+	<filter>
+        <filter-name>Auth</filter-name>
+        <filter-class>AuthFilter</filter-class>
+    </filter>
+	<filter-mapping>
+		<filter-name>Auth</filter-name>
+		<url-pattern>/LoginSrv</url-pattern>
+    </filter-mapping>
+	<filter>
+        <filter-name>pTest</filter-name>
+        <filter-class>PerfTestFilter</filter-class>
+    </filter>
+	<filter-mapping>
+		<filter-name>pTest</filter-name>
+		<url-pattern>/LoginSrv</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>LoginSrv</servlet-class>
+    </servlet>
+    <servlet-mapping>
+		<servlet-name>Login</servlet-name>
+        <url-pattern>/LoginSrv</url-pattern>
+    </servlet-mapping>
+</web-app>

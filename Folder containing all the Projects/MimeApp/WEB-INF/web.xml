@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+    <servlet>
+        <servlet-name>xml</servlet-name>
+       <servlet-class>XmlSrv</servlet-class>		
+    </servlet>
+	<servlet-mapping>
+        <servlet-name>xml</servlet-name>
+        <url-pattern>/xmlurl</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>excl</servlet-name>
+       <servlet-class>ExcelSrv</servlet-class>		
+    </servlet>
+	<servlet-mapping>
+        <servlet-name>excl</servlet-name>
+        <url-pattern>/exclurl</url-pattern>
+    </servlet-mapping>
+	    <servlet>
+        <servlet-name>word</servlet-name>
+       <servlet-cla
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   ss>WordSrv</servlet-class>		
+    </servlet>
+	<servlet-mapping>
+        <servlet-name>word</servlet-name>
+        <url-pattern>/wurl</url-pattern>
+    </servlet-mapping>
+
+
+	
+
+
+
+</web-app>

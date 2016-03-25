@@ -1,0 +1,33 @@
+import java.io.*;
+import java.servelt.*;
+import jvaa.servlet.http.*;
+
+public class  ReqResTest extends HttpServlet
+{
+	public void service(HttpServletRequest hreq,HttpServletResponse hres)throws ServletException,IOException
+	{
+	  PrintWriter pw=hres.getWriter();
+	  pw.println("<center>req params are</center> ");
+       Enumeration e=hreq.getParameterNames();
+
+	   while(e.hasMoreElements())
+		{
+		   String name=(String)e.nextElement();
+		   String val=hreq.getParmeter(name);
+		   pw.println("<br>name="+name+"&nbsp;&nbsp;"+"value="+val);
+		}
+
+	pw.println("<center>req Headers are</center> ");
+       Enumeration e=hreq.getHeaderNames();
+
+	   while(e.hasMoreElements())
+		{
+		   String name=(String)e.nextElement();
+		   String val=hreq.getHeader(name);
+		   pw.println("<br>name="+name+"&nbsp;&nbsp;"+"value="+val);
+		}
+		pw.close();
+	   
+	}//service
+
+}//class

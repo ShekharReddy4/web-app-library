@@ -1,0 +1,51 @@
+   <!--building and deploying struts application using ant tools -->
+<project name="Dep_Web" basedir="." default="deploy">
+    <!-- Variable Declarion -->
+    <property name="home" value="D:/Tomcat 5.0"/>
+    <property name="deploy.dir" value="${home}/webapps"/>
+    <property name="build.dir" value="build"/>
+	<property name="web-inf" value="${build.dir}/WEB-INF"/>
+    <property name="warname" value="DBApp"/>
+     <!-- construct staging dir structure -->
+    <target name="prepare">
+		<mkdir  dir="${build.dir}"/>
+		<mkdir  dir="${web-inf}"/>
+		<mkdir  dir="${web-inf}/classes"/>
+		<mkdir  dir="${web-inf}/lib"/>
+	  <copy todir="${web-inf}">
+        <fileset dir=".">
+		    <include name="web.xml"/>
+		</fileset>
+		</copy>
+	    <copy todir="${web-inf}/lib">
+			 <fileset dir="lib">
+					<include name="classes111.jar"/>
+			  </fileset>
+		 </copy>
+ 	    <copy todir="${build.dir}">
+			 <fileset dir=".">
+				<include name="*.html"/>
+			  </fileset>
+		 </copy>
+    </target>
+    
+	<!-- Normal build of application -->
+    <target name="compile" depends="prepare">
+        <javac srcdir="." destdir="${web-inf}/classes">
+          </javac>
+    </target>
+    <!-- Build entire project -->
+    <target name="build" depends="prepare,compile"/>
+   
+	<!-- Create binary distribution -->
+    <target name="war" depends="build">
+      <war   basedir="${build.dir}"  webxml="${web-inf}/web.xml" warfile="${warname}.war"  />
+    </target>
+
+   <!-- Copy war file to tomcat -->
+	<target name="deploy" depends="war">
+       <copy file="${warname}.war" todir="${deploy.dir}"/>
+	   <delete file="${warname}.war"/>
+    </target>
+</project>
+
